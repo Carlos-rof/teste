@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lobby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
+    <link rel="icon" href="https://freepngimg.com/download/python_logo/4-2-python-logo-picture.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+
+</head>
+
+<body>
+    <div>
+        <h1>Dinossauros</h1>
+        <form id="chat-dinos">
+            <input type="text" name="message" onclick="send_dinos()" />
+        </form>
+
+        <div id="messages-dinos"></div>
+    </div>
+    <div>
+        <h1>Aves raras</h1>
+        <form id="chat-aves-raras">
+            <input type="text" name="message" onclick="send_aves()" />
+        </form>
+
+        <div id="messages-aves-raras"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
