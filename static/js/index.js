@@ -1,7 +1,7 @@
 var TYPE = null
 async function get_token() {
     const options = { method: 'GET', };
-    let teste = await fetch('http://15.229.115.16:8070/get-token/', options)
+    let teste = await fetch('http://127.0.0.1:8000/get-token/', options)
     const token = await teste.json();
     return token["token"]
 }
@@ -9,7 +9,7 @@ async function get_token() {
 var testando = (async () => {
     const data = await get_token();
     let token = await data;
-    const connTeste = new WebSocket("ws://15.229.115.16:8765")
+    const connTeste = new WebSocket("ws://localhost:8765")
     connTeste.onopen = (event) => connTeste.send(JSON.stringify({ "token": token }));
     connTeste.onmessage = function (event) {
         if (JSON.parse(event.data)["message"] != "" && JSON.parse(event.data)["message"] != null) {
